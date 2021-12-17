@@ -32,6 +32,8 @@ namespace Practice_14
                 using (StreamReader streamwriter = new StreamReader("config.ini"))
                 {
                     _myArray = new MyArray(int.Parse(streamwriter.ReadLine()), int.Parse(streamwriter.ReadLine()));
+                    InitializeComponent();
+                    dataGridMain.ItemsSource = _myArray.ToDataTable().DefaultView;
                 }
             }
             else MessageBox.Show("Нет файла конфигурации!", "Конфигурация таблицы", MessageBoxButton.OK, MessageBoxImage.Warning);
