@@ -36,7 +36,7 @@ namespace Practice_14
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            Owner.Close();
+           Owner.Close();
         }
 
     }

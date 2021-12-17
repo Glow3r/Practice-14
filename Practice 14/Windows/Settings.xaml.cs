@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,16 @@ namespace Practice_14
         public Settings()
         {
             InitializeComponent();
+        }
+
+        private void Apply_Click(object sender, RoutedEventArgs e)
+        {
+            using (StreamWriter streamwriter = new StreamWriter("config.ini"))
+            {
+                streamwriter.WriteLine(columnInput.Text);
+                streamwriter.WriteLine(rowInput.Text);
+                Close();
+            }
         }
     }
 }

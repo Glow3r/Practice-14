@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practice_14"
         mc:Ignorable="d"
-        Title="Settings" Height="150" Width="200">
+        Title="Settings" Height="150" Width="195" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Practice 14;component/Resources/settings.ico">
     <Grid>
-        <GroupBox Header="Настройка окна" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <GroupBox Header="Настройка таблицы" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -15,23 +15,23 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="10"/>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal">
-                    <TextBlock Text="Ширина" />
-                    <TextBox Width="40" Margin="15,0,0,0"/>
+                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal" Height="18" >
+                    <TextBlock Text="Кол-во строк" />
+                    <TextBox x:Name="rowInput"  Width="40" Margin=" 30,0,0,0"/>
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Orientation="Horizontal">
-                    <TextBlock Text="Длина" />
-                    <TextBox Width="40" Margin="25,0,0,0"/>
+                <StackPanel Grid.Row="1" Grid.Column="1"  VerticalAlignment="Top" Orientation="Horizontal" Height="18">
+                    <TextBlock Text="Кол-во столбцов" />
+                    <TextBox x:Name="columnInput" Width="40" Margin=" 9,0,0,0" />
                 </StackPanel>
 
-                <StackPanel VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                    <Button Content="Применить" HorizontalAlignment="Right"/>
+                <StackPanel VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Height="20">
+                    <Button Content="Применить" HorizontalAlignment="Right" Width="143" Click="Apply_Click"/>
                 </StackPanel>
 
 

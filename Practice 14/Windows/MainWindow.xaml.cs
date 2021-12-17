@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,16 @@ namespace Practice_14
         {
             Authorization auth = new Authorization();
             auth.ShowDialog();
+            if (File.Exists("config.ini"))
+            {
+                using (StreamReader streamwriter = new StreamReader("config.ini"))
+                {
+                    _myArray = new MyArray(int.Parse(streamwriter.ReadLine()), int.Parse(streamwriter.ReadLine()));
+                }
+            }
+            else MessageBox.Show("Нет файла конфигурации!", "Конфигурация таблицы", MessageBoxButton.OK, MessageBoxImage.Warning);
             InitializeComponent();
+            dataGridMain.ItemsSource = _myArray.ToDataTable().DefaultView;
         }
 
         private MyArray _myArray;
@@ -91,6 +101,7 @@ namespace Practice_14
             resultOutput.Text = string.Empty;
             dataGridMain.ItemsSource = _myArray.ToDataTable().DefaultView;
         }
+    
 
         private void SaveArray_Click(object sender, RoutedEventArgs e)
         {
@@ -133,6 +144,20 @@ namespace Practice_14
             ExitConfirmation exit = new ExitConfirmation();
             exit.Owner = this;
             exit.ShowDialog();
+        }
+
+        private void SetParametrs_Click(object sender, RoutedEventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Owner = this;
+            settings.ShowDialog();
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Owner = this;
+            settings.ShowDialog();
         }
     }    
 }

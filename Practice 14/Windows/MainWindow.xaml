@@ -9,7 +9,7 @@
     <Window.ContextMenu>
         <ContextMenu>
             <MenuItem Header="Задание" Click="ExcersizeInformation_Click"/>
-            <MenuItem Header="Настроть" Click="ExcersizeInformation_Click"/>
+            <MenuItem Header="Настроть" Click="SetParametrs_Click"/>
         </ContextMenu>
     </Window.ContextMenu>
     <Grid>
@@ -37,7 +37,7 @@
             <Separator/>
             <Button Content="Сохранить" Click="SaveArray_Click"/>
             <Separator/>
-            <Button Content="Настроить" Click="SaveArray_Click"/>
+            <Button Content="Настроить" Click="Settings_Click"/>
         </ToolBar>
 
         <GroupBox Grid.Row="2" Header="Результат">
