@@ -36,7 +36,6 @@ namespace Practice_14
             }
             else MessageBox.Show("Нет файла конфигурации!", "Конфигурация таблицы", MessageBoxButton.OK, MessageBoxImage.Warning);
             InitializeComponent();
-            dataGridMain.ItemsSource = _myArray.ToDataTable().DefaultView;
         }
 
         private MyArray _myArray;
